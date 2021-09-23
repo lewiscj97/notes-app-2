@@ -16,6 +16,7 @@ class Notebook
   end
 
   def show_note(title)
+    raise ArgumentError.new("Note doesn't exist") if find_note(title) == nil
     format_note(find_note(title))
   end
 

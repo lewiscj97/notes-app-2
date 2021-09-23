@@ -28,7 +28,7 @@ describe Notebook do
     end
 
     it "tells the user the note doesn't exist if the title doesn't match" do
-      expect {subject.show_note("This is the title")}.to raise_error("Note doens't exist")
+      expect {subject.show_note("This is the title")}.to raise_error("Note doesn't exist")
     end
   end
 
