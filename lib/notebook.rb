@@ -10,4 +10,8 @@ class Notebook
   def add(title, body)
     @notes.push(Note.new(title, body))
   end
+
+  def titles
+    titles = @notes.map {|note| note.title}
+  end
 end
