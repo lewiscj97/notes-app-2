@@ -14,4 +14,9 @@ class Notebook
   def titles
     titles = @notes.map {|note| note.title}
   end
+
+  def show_note(title)
+    note = @notes.find {|note| note.title == title}
+    "Title: #{note.title}, Body: #{note.body}"
+  end
 end
