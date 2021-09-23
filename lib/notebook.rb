@@ -16,7 +16,12 @@ class Notebook
   end
 
   def show_note(title)
-    note = @notes.find {|note| note.title == title}
+    format_note(@notes.find {|note| note.title == title})
+  end
+
+  private
+
+  def format_note(note)
     "Title: #{note.title}, Body: #{note.body}"
   end
 end
