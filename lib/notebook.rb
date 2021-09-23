@@ -19,6 +19,10 @@ class Notebook
     format_note(find_note(title))
   end
 
+  def edit_note(title, new_body)
+    find_note(title).body = new_body
+  end
+
   private
 
   def format_note(note)

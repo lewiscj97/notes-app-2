@@ -4,5 +4,6 @@ class Note
     @body = body
   end
 
-  attr_reader :title, :body
+  attr_reader :title
+  attr_accessor :body
 end
