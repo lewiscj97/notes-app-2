@@ -16,12 +16,12 @@ class Notebook
   end
 
   def show_note(title)
-    raise ArgumentError.new("Note doesn't exist") if find_note(title) == nil
+    exception_if_no_note(title)
     format_note(find_note(title))
   end
 
   def edit_note(title, new_body)
-    raise ArgumentError.new("Note doesn't exist") if find_note(title) == nil
+    exception_if_no_note(title)
     find_note(title).body = new_body
   end
 
@@ -33,5 +33,9 @@ class Notebook
 
   def find_note(title)
     @notes.find {|note| note.title == title}
+  end
+
+  def exception_if_no_note(title)
+    raise ArgumentError.new("Note doesn't exist") if find_note(title) == nil
   end
 end
