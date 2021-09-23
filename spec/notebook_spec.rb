@@ -20,4 +20,11 @@ describe Notebook do
       expect(subject.titles).to eq ["This is the title", "This is a new title"]
     end
   end
+
+  describe "#show_note" do
+    it "shows the title and body of a note when passed a title" do
+      subject.add("This is the title", "and this is the body")
+      expect(subject.show_note("This is the title")).to eq "Title: This is the title, Body: and this is the body"
+    end
+  end
 end
