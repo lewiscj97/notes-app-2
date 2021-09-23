@@ -21,6 +21,7 @@ class Notebook
   end
 
   def edit_note(title, new_body)
+    raise ArgumentError.new("Note doesn't exist") if find_note(title) == nil
     find_note(title).body = new_body
   end
 
