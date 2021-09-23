@@ -26,6 +26,10 @@ describe Notebook do
       subject.add("This is the title", "and this is the body")
       expect(subject.show_note("This is the title")).to eq "Title: This is the title, Body: and this is the body"
     end
+
+    it "tells the user the note doesn't exist if the title doesn't match" do
+      expect {subject.show_note("This is the title")}.to raise_error("Note doens't exist")
+    end
   end
 
   describe "#edit_note" do
