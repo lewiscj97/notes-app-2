@@ -12,4 +12,12 @@ describe Notebook do
       end
     end
   end
+
+  describe "#titles" do
+    it "shows a list of titles" do
+      subject.add("This is the title", "and this is the body")
+      subject.add("This is a new title", "and this is the body")
+      expect(subject.titles).to eq ["This is the title", "This is a new title"]
+    end
+  end
 end
