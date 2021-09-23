@@ -27,4 +27,12 @@ describe Notebook do
       expect(subject.show_note("This is the title")).to eq "Title: This is the title, Body: and this is the body"
     end
   end
+
+  describe "#edit_note" do
+    it "lets the user edit the body of a note when passed a title" do
+      subject.add("This is the title", "and this is the body")
+      subject.edit_note("This is the title", "this is my new body because the last one sucked")
+      expect(subject.show_note("This is the title")).to eq "Title: This is the title, Body: this is my new body because the last one sucked"
+    end
+  end
 end
